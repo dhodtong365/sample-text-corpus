@@ -1,92 +1,18 @@
-# Starter Tutorial
+ Millburn Township is a beautiful residential community located in the southwest corner of Essex County. The Township is easy to reach via the midtown direct line of New Jersey Transit, the Garden State Parkway, New Jersey Turnpike, and is also convenient to Routes 24 and 78.
 
-Here is a starter example for using LlamaIndex. Make sure you've followed the [installation](installation.md) steps first.
+Schools Within Millburn Township
+Millburn Township has an excellent school system. New Jersey Magazine has ranked the Millburn Township school system among the top 3 school districts in the state. In addition, Township schools also receive a national ranking as having one of the most academically challenging high schools in the country, offering many advance placement courses to students who excel in those classes.
 
-### Download
+Activities & Recreation
+The Township offers a wide variety of recreation programs, including a community pool and a par 3 golf course, making the community appealing for families. In addition, Millburn Township has many fine restaurants, a movie theater, the Hilton Short Hills, rated by AAA as a 5 Diamond Hotel, and a wide variety of cultural events, including the renowned Paper Mill Playhouse and the Cora Hartshorn Arboretum and Bird Sanctuary.
 
-LlamaIndex examples can be found in the `examples` folder of the LlamaIndex repository.
-We first want to download this `examples` folder. An easy way to do this is to just clone the repo:
+Shopping in Millburn Township
+Millburn Township is unique in that it offers upscale, high-end, 5th avenue shopping along with quaint small town shopping of a traditional downtown. The Mall at Short Hills, located on the western side of the Township, is a beautiful regional shopping center in which many fine shops and stores are located. The downtown and local shopping areas offer a variety of unique specialty shops, service-based businesses, and professional offices.
 
-```bash
-$ git clone https://github.com/jerryjliu/llama_index.git
-```
+Population
+The present population of the Millburn-Short Hills area is approximately 20,130. Millburn Township is a full-service community where most residents live in single family homes. Millburn is comprised of the historic Wyoming district, and South Mountain and Millburn Center areas. Short Hills contains the sections of Knollwood, Glenwood, Brookhaven, Country Club, Merrywood, Deerfield-Crossroads, Mountaintop, White Oak Ridge, and Old Short Hills Estates.
 
-Next, navigate to your newly-cloned repository, and verify the contents:
-
-```bash
-$ cd llama_index
-$ ls
-LICENSE                data_requirements.txt  tests/
-MANIFEST.in            examples/              pyproject.toml
-Makefile               experimental/          requirements.txt
-README.md              llama_index/             setup.py
-```
-
-We now want to navigate to the following folder:
-
-```bash
-$ cd examples/paul_graham_essay
-```
-
-This contains LlamaIndex examples around Paul Graham's essay, ["What I Worked On"](http://paulgraham.com/worked.html). A comprehensive set of examples are already provided in `TestEssay.ipynb`. For the purposes of this tutorial, we can focus on a simple example of getting LlamaIndex up and running.
-
-### Build and Query Index
-
-Create a new `.py` file with the following:
-
-```python
-from llama_index import VectorStoreIndex, SimpleDirectoryReader
-
-documents = SimpleDirectoryReader('data').load_data()
-index = VectorStoreIndex.from_documents(documents)
-```
-
-This builds an index over the documents in the `data` folder (which in this case just consists of the essay text). We then run the following
-
-```python
-query_engine = index.as_query_engine()
-response = query_engine.query("What did the author do growing up?")
-print(response)
-```
-
-You should get back a response similar to the following: `The author wrote short stories and tried to program on an IBM 1401.`
-
-### Viewing Queries and Events Using Logging
-
-In a Jupyter notebook, you can view info and/or debugging logging using the following snippet:
-
-```python
-import logging
-import sys
-
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
-logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
-```
-
-You can set the level to `DEBUG` for verbose output, or use `level=logging.INFO` for less.
-
-### Saving and Loading
-
-By default, data is stored in-memory.
-To persist to disk (under `./storage`):
-
-```python
-index.storage_context.persist()
-```
-
-To reload from disk:
-```python
-from llama_index import StorageContext, load_index_from_storage
-
-# rebuild storage context
-storage_context = StorageContext.from_defaults(persist_dir="./storage")
-# load index
-index = load_index_from_storage(storage_context)
-```
-
-### Next Steps
-
-That's it! For more information on LlamaIndex features, please check out the numerous "Guides" to the left.
-If you are interested in further exploring how LlamaIndex works, check out our [Primer Guide](/guides/primer.rst).
-
-Additionally, if you would like to play around with Example Notebooks, check out [this link](/reference/example_notebooks.rst).
+New Resident Resources
+Call811Article (PDF)
+Citizen's Guide to Millburn Township (PDF)
+Millburn Welcome Packet (PDF)
